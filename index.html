@@ -1,0 +1,337 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101114">
+  <meta name="description" content="LOW CAR en Comodoro Rivadavia, Chubut. Detallado automotriz, limpieza profunda, mecánica general y electricidad automotriz.">
+  <title>LOW CAR | Servicios Automotrices</title>
+  <style>
+    :root {
+      --fondo: #101114;
+      --panel: #1b1d22;
+      --texto: #f7f7f7;
+      --gris: #bfc1c8;
+      --verde: #d9ff3f;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--fondo);
+      color: var(--texto);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+    }
+
+    .contenedor { width: min(1100px, 90%); margin: auto; }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: #101114;
+      border-bottom: 1px solid #303239;
+    }
+
+    nav {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .logo {
+      font-size: 1.7rem;
+      font-weight: 900;
+      letter-spacing: 3px;
+      text-decoration: none;
+    }
+
+    .logo span, .verde { color: var(--verde); }
+
+    nav .enlaces { display: flex; gap: 18px; }
+    nav .enlaces a {
+      color: var(--gris);
+      text-decoration: none;
+    }
+
+    a:hover { opacity: .85; }
+
+    .boton {
+      display: inline-block;
+      background: var(--verde);
+      color: #151610;
+      padding: 13px 20px;
+      border-radius: 7px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .boton-secundario {
+      background: transparent;
+      color: white;
+      border: 1px solid #777;
+    }
+
+    .hero {
+      padding: 85px 0;
+      background: radial-gradient(ellipse at 85% 20%, #30391a, transparent 40%);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .etiqueta {
+      color: var(--verde);
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-weight: bold;
+      font-size: .8rem;
+    }
+
+    h1 {
+      font-size: clamp(2.7rem, 6vw, 5rem);
+      line-height: 1.05;
+      margin: 18px 0;
+      letter-spacing: -2px;
+    }
+
+    h2 { font-size: clamp(2rem, 4vw, 3rem); line-height: 1.15; }
+    h3 { font-size: 1.35rem; }
+
+    p { color: var(--gris); }
+    .acciones { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 25px; }
+
+    .imagen-principal {
+      min-height: 320px;
+      border: 1px solid #41443c;
+      border-radius: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 25px;
+      background: linear-gradient(145deg, #30343b, #17181c);
+    }
+
+    .imagen-principal strong {
+      display: block;
+      color: var(--verde);
+      font-size: 2.3rem;
+      letter-spacing: 4px;
+    }
+
+    section { padding: 70px 0; }
+
+    .introduccion { max-width: 700px; margin-bottom: 30px; }
+
+    .tarjetas {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .tarjeta {
+      background: var(--panel);
+      border: 1px solid #303239;
+      border-radius: 12px;
+      padding: 25px;
+    }
+
+    .tarjeta .numero { color: var(--verde); font-weight: bold; }
+    .tarjeta ul { padding-left: 20px; color: var(--gris); }
+    .tarjeta li { margin: 7px 0; }
+
+    .nosotros { background: #17181c; }
+    .nosotros-grid {
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+      gap: 35px;
+    }
+
+    .frase { font-size: 2rem; font-weight: bold; line-height: 1.3; }
+    .galeria {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+    }
+
+    .espacio-foto {
+      min-height: 180px;
+      background: var(--panel);
+      border: 1px dashed #666;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: var(--gris);
+      padding: 18px;
+    }
+
+    .contacto {
+      background: var(--verde);
+      color: #151610;
+    }
+
+    .contacto p { color: #343923; }
+    .contacto .etiqueta { color: #343923; }
+    .contacto .boton { background: #151610; color: white; }
+    .contacto-grid {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+    }
+
+    footer { padding: 25px 0; color: var(--gris); font-size: .9rem; }
+
+    @media (max-width: 760px) {
+      nav .enlaces { display: none; }
+      .hero { padding: 55px 0; }
+      .hero-grid, .nosotros-grid { grid-template-columns: 1fr; }
+      .tarjetas, .galeria { grid-template-columns: 1fr; }
+      .contacto-grid { align-items: flex-start; flex-direction: column; }
+      section { padding: 50px 0; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="contenedor">
+      <nav>
+        <a class="logo" href="#inicio">LOW <span>CAR</span></a>
+        <div class="enlaces">
+          <a href="#servicios">Servicios</a>
+          <a href="#nosotros">Nosotros</a>
+          <a href="#trabajos">Trabajos</a>
+          <a href="#contacto">Contacto</a>
+        </div>
+        <a class="boton" href="#contacto">Consultar</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="contenedor hero-grid">
+        <div>
+          <div class="etiqueta">Estética · Mecánica · Electricidad</div>
+          <h1>Tu auto,<br><span class="verde">en buenas manos.</span></h1>
+          <p>En LOW CAR cuidamos tu vehículo con detallado automotriz, limpieza profunda y servicios de mecánica general y electricidad. Atención personalizada y soluciones para cada necesidad.</p>
+          <div class="acciones">
+            <a class="boton" href="https://wa.me/5492975931951?text=Hola%2C%20quiero%20consultar%20por%20un%20servicio%20de%20LOW%20CAR" target="_blank" rel="noopener">Pedir presupuesto</a>
+            <a class="boton boton-secundario" href="#servicios">Ver servicios</a>
+          </div>
+        </div>
+        <div class="imagen-principal">
+          <div>
+            <strong>LOW CAR</strong>
+            <p>DETALLE EN CADA TRABAJO</p>
+            <p>Comodoro Rivadavia · Chubut</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="servicios">
+      <div class="contenedor">
+        <div class="introduccion">
+          <div class="etiqueta">Qué hacemos</div>
+          <h2>Servicios para cuidar tu vehículo</h2>
+          <p>Consultanos por tu caso. El trabajo recomendado y su presupuesto dependen del estado del vehículo y del servicio que necesite.</p>
+        </div>
+        <div class="tarjetas">
+          <article class="tarjeta">
+            <div class="numero">01 / ESTÉTICA</div>
+            <h3>Detallado automotriz</h3>
+            <p>Limpieza y cuidado para mejorar la presentación de tu vehículo, prestando atención a los detalles.</p>
+            <ul>
+              <li>Limpieza profunda de interiores</li>
+              <li>Tapizados, alfombras y plásticos</li>
+              <li>Limpieza exterior y cuidado general</li>
+            </ul>
+          </article>
+          <article class="tarjeta">
+            <div class="numero">02 / MECÁNICA</div>
+            <h3>Mecánica general</h3>
+            <p>Evaluación de necesidades de mantenimiento y problemas de funcionamiento.</p>
+            <ul>
+              <li>Evaluación de fallas</li>
+              <li>Mantenimiento y reparaciones</li>
+              <li>Presupuesto según diagnóstico</li>
+            </ul>
+          </article>
+          <article class="tarjeta">
+            <div class="numero">03 / ELECTRICIDAD</div>
+            <h3>Electricidad automotriz</h3>
+            <p>Revisión de inconvenientes eléctricos para orientar el diagnóstico y definir los pasos a seguir.</p>
+            <ul>
+              <li>Evaluación de fallas eléctricas</li>
+              <li>Revisión según el problema</li>
+              <li>Explicación del trabajo recomendado</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="nosotros" id="nosotros">
+      <div class="contenedor nosotros-grid">
+        <div class="frase">Trabajo responsable.<br><span class="verde">Atención personalizada.</span></div>
+        <div>
+          <div class="etiqueta">Conocé LOW CAR</div>
+          <h2>Nos importa el resultado y la confianza.</h2>
+          <p>Creemos que un buen servicio empieza por escuchar al cliente y entender qué necesita su vehículo. Buscamos trabajar con dedicación, explicar las opciones disponibles y conversar el presupuesto antes de realizar reparaciones.</p>
+          <p>Ya sea para renovar el interior de tu auto o consultar por una falla mecánica o eléctrica, escribinos para coordinar una evaluación.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="trabajos">
+      <div class="contenedor">
+        <div class="introduccion">
+          <div class="etiqueta">Nuestro trabajo</div>
+          <h2>Galería de trabajos</h2>
+          <p>Próximamente, fotos reales de trabajos de LOW CAR. Podés reemplazar estos espacios por imágenes de antes y después.</p>
+        </div>
+        <div class="galeria">
+          <div class="espacio-foto">Antes y después<br>Interior del vehículo</div>
+          <div class="espacio-foto">Proceso de limpieza<br>Detalle interior</div>
+          <div class="espacio-foto">Resultado final<br>Trabajo terminado</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contacto" id="contacto">
+      <div class="contenedor contacto-grid">
+        <div>
+          <div class="etiqueta">Hablemos de tu vehículo</div>
+          <h2>¿Necesitás un servicio?</h2>
+          <p>Escribinos para contarnos qué necesita tu auto, consultar por nuestros servicios y coordinar un turno.</p>
+          <p><strong>Comodoro Rivadavia, Chubut, Argentina</strong></p>
+        </div>
+        <div class="acciones">
+          <a class="boton" href="https://wa.me/5492975931951?text=Hola%2C%20quiero%20consultar%20por%20un%20servicio%20de%20LOW%20CAR" target="_blank" rel="noopener">Contactar por WhatsApp</a>
+          <a class="boton" href="https://www.youtube.com/channel/UCLnWzDffRTfk6vjOidQYBFA" target="_blank" rel="noopener">Ver canal de YouTube</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="contenedor">
+      <strong>LOW CAR</strong> · Tu auto, en buenas manos.<br>
+      Detallado automotriz · Mecánica general · Electricidad automotriz
+    </div>
+  </footer>
+</body>
+</html>
